@@ -1,0 +1,20 @@
+# Site settings
+author: Thomas Pope
+title: A Coding Journey
+header-img: img/home-bg.png
+email: tpope0928@gmail.com
+copyright_name: Thomas Pope
+description: > # this means to ignore newlines until "baseurl:"
+  My Adventure Into Becoming a Programmer
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: 
+github_username:  tpope0928
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
