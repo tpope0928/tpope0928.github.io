@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "The Time Has Come"
-date:       2020-02-14 03:02:03 +0000
+date:       2020-02-13 22:02:04 -0500
 permalink:  the_time_has_come
 ---
 
@@ -35,20 +35,20 @@ it was important to me to seperate he controllers and controller actions. After 
 
 There were some easy and obvious validations. I mentioned Sessions controller and Session. This allows the app to store some data and hold some data about a user that can be read during later requests. I added some more validations in each appropriate model. Rails allows us the :validates option, which makes sure certain attributes are there before submitting to the database. For example, check out the code below:
 
-```validates :venue, presence: true
+```
+validates :venue, presence: true
     validates :city, presence: true
     validates :state, presence: true
     validates :date, presence: true, uniqueness: { scope: :date, message: "already taken" }
 
+
+    def self.concert_date
+        order(date: :desc)
+    end
 ```
 
 The venue, city, and state validation makes sure those attributes are filled out before creating a concert. The date has an additional validation of uniqueness where a user cannot attend two concerts on the same date. Therefore, A user cannot create more than one concert on the same date. I am also proud of the custom validation i added to list concerts in decending order on the show page. A user will see the concerts he attended starting with the most recent.
 
-```
-def self.concert_date
-      order(date: :desc)
-  end
-```
 
 I know, pretty simple. But i was excited about it! 
 
